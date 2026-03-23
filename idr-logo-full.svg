@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" width="300" height="72">
+
+  <!-- Background -->
+  <rect width="300" height="72" fill="#0D0D0D"/>
+
+  <!--
+    Canvas: 300 x 72px. Vertical centre = 36.
+    Cube: 52px tall → placed at y=10 (top) to y=62 (bottom), centre = 36. ✓
+    Divider: x=70, y=10–62.
+    Text block: two lines centred as a group around y=36.
+      IDR font-size=26 → cap-height ~18px → top of caps ~27, bottom ~45
+      Gap + rule at y=47
+      Subtitle font-size=8 → baseline at y=57
+      Group visual centre ≈ (27+57)/2 = 42 → shift group up by 6 so centre = 36
+      → IDR baseline = 39, rule y=45, subtitle baseline = 55
+  -->
+
+  <!-- Cube icon — 52×52, top-left at (8,10) so cube centre-y = 36 -->
+  <g transform="translate(8,10)">
+    <polygon points="26,0 52,13 26,26 0,13"   fill="#FF6B1A"/>
+    <polygon points="0,13 26,26 26,52 0,39"   fill="#1E1E1E"/>
+    <polygon points="52,13 26,26 26,52 52,39"  fill="#B84200"/>
+    <polyline points="26,0 52,13 26,26 0,13 26,0" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
+    <line x1="26" y1="26" x2="26" y2="52" stroke="rgba(255,255,255,0.1)"  stroke-width="0.8"/>
+    <line x1="26" y1="0"  x2="26" y2="26" stroke="rgba(255,255,255,0.22)" stroke-width="0.6"/>
+    <line x1="0"  y1="13" x2="52" y2="13" stroke="rgba(255,255,255,0.1)"  stroke-width="0.6"/>
+    <polygon points="26,0 52,13 26,26 0,13" fill="none" stroke="rgba(255,150,60,0.25)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Vertical divider centred with cube -->
+  <rect x="70" y="10" width="1" height="52" fill="rgba(255,107,26,0.28)"/>
+
+  <!-- IDR — baseline y=41 gives visual centre ~36 for 26px caps -->
+  <text
+    x="82" y="41"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="26"
+    fill="#FFFFFF"
+    letter-spacing="5"
+  >IDR</text>
+
+  <!-- Orange rule -->
+  <rect x="82" y="47" width="132" height="1" fill="rgba(255,107,26,0.4)"/>
+
+  <!-- Subtitle baseline y=58 — sits 11px below rule, within cube bottom (y=62) -->
+  <text
+    x="82" y="58"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="400"
+    font-size="8"
+    fill="rgba(255,255,255,0.42)"
+    letter-spacing="2.4"
+  >INSTITUTE OF DIGITAL RISK</text>
+
+</svg>
